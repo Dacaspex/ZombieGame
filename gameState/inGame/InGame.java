@@ -26,9 +26,9 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -323,8 +323,10 @@ public class InGame extends GameState {
 
 			String deathMessagesRaw = "";
 
-			BufferedReader br = new BufferedReader(new FileReader(new File(System.getProperty("user.dir") + "/src/data/death-messages.txt")));
+			InputStream in = GamePanel.class.getResourceAsStream("/data/death-messages.txt");
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			StringBuilder sb = new StringBuilder();
+			
 			String line = br.readLine();
 
 			while (line != null) {

@@ -88,10 +88,16 @@ public class Shop extends GameState {
 
 				int reloadPrice = (int) ((((float) maxBullets - (float) bulletsLeft) / (float) maxBullets) * (float) slot
 						.getPrice());
-
+				
 				// Add base price
-				reloadPrice += 20;
-
+				// Later moet dit in de xml!
+				if (slot.getName() == "M1911")
+					reloadPrice += 20;
+				else if (slot.getName() == "AK47")
+					reloadPrice = (int) (reloadPrice * 1.6) + 50;
+				else if (slot.getName() == "M16A3")
+					reloadPrice = (int) (reloadPrice * 1.8) + 60;
+				
 				gunLabel = "Reload " + slot.getName() + ": " + reloadPrice
 						+ "$";
 

@@ -17,7 +17,7 @@
 		<Reloadspeed>3.5</Reloadspeed>
 		<Clipsize>30</Clipsize>
 		<Maxbullets>1600</Maxbullets>
-		<Weight>2000</Weight>
+		<Weight>1600</Weight>
 		<Price>1000</Price>
 		<Type>Assault Rifle</Type>
 	</AK47>

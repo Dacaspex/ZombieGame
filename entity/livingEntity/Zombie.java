@@ -47,7 +47,6 @@ public class Zombie extends LivingEntity {
 	public Zombie(ZombieType type, double x, double y) {
 
 		super(x, y);
-		// this.type = type;
 		r = (int) (30 * GamePanel.horScale);
 		health = 300;
 		int waveNumber = 0;
@@ -56,7 +55,7 @@ public class Zombie extends LivingEntity {
 		else if (GamePanel.getGameState() instanceof Shop)
 			waveNumber = ((Endless) ((Shop) GamePanel.getGameState())
 					.getOldState()).getWaveNumber();
-		speed = (random.nextInt(5) + 4) / 10.0 + waveNumber / 30.0;
+		speed = (random.nextInt(3) + 5) / 10.0 + waveNumber / 30.0;
 
 		canAttack = true;
 		attackStrength = 10;
